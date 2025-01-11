@@ -42,4 +42,4 @@ Choose a language and replace YOUR_TOKEN and the API endpoint URL in the corresp
 Run the code in your chosen environment.
 
 # License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see [LICENSE](./LICENSE) file for details.
