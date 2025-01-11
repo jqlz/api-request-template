@@ -1,0 +1,16 @@
+{-# LANGUAGE OverloadedStrings #-}
+
+import Network.HTTP.Conduit
+import Network.HTTP.Types.Status (statusCode)
+import qualified Data.ByteString.Lazy as B
+
+main :: IO ()
+main = do
+    manager <- newManager defaultManagerSettings
+    request <- parseRequest "https://api.example.com/data"
+    let request' = setRequestHeader "Authorization" ["Bearer YOUR_TOKEN"]
+                  $ setRequestHeader "Content-Type" ["application/json"]
+                  $ request
+    response <- httpLbs request' manager
+    putStrLn $ "Response status: " ++ show (statusCode $ responseStatus response)
+    B.putStrLn $ responseBody response
