@@ -1,0 +1,13 @@
+Imports System.Net.Http
+
+Module Module1
+    Sub Main()
+        Dim client As New HttpClient()
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_TOKEN")
+        client.DefaultRequestHeaders.Add("Content-Type", "application/json")
+
+        Dim response = client.GetAsync("https://api.example.com/data").Result
+        Dim content = response.Content.ReadAsStringAsync().Result
+        Console.WriteLine(content)
+    End Sub
+End Module
