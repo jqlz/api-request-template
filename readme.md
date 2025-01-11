@@ -37,7 +37,7 @@ This repository contains examples of making API requests in various programming 
 1. Clone this repository:
    ```bash
    git clone https://github.com/jqlz/api-request-template.git
-   cd repo```
+   cd repo
 Choose a language and replace YOUR_TOKEN and the API endpoint URL in the corresponding example.
 Run the code in your chosen environment.
 
