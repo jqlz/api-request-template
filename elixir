@@ -1,0 +1,18 @@
+defmodule ApiRequest do
+  def fetch_data do
+    url = "https://api.example.com/data"
+    headers = [
+      {"Authorization", "Bearer YOUR_TOKEN"},
+      {"Content-Type", "application/json"}
+    ]
+
+    case HTTPoison.get(url, headers) do
+      {:ok, %HTTPoison.Response{body: body}} ->
+        IO.puts(body)
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        IO.puts("Error: #{reason}")
+    end
+  end
+end
+
+ApiRequest.fetch_data()
