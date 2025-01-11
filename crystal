@@ -1,0 +1,8 @@
+require "http/client"
+
+url = "https://api.example.com/data"
+headers = HTTP::Headers{"Authorization" => "Bearer YOUR_TOKEN", "Content-Type" => "application/json"}
+
+response = HTTP::Client.get(url, headers)
+
+puts response.body
